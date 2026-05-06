@@ -1,0 +1,123 @@
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #4a90e2;
+  cursor: pointer;
+}
+
+.registration-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "main main sidebar";
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.registration-content {
+  grid-area: main;
+  min-width: 0;
+}
+
+.registration-sidebar {
+  grid-area: sidebar;
+  padding: 10px 1rem;
+  min-width: 200px;
+}
+
+/*media queries for volunteer events registration page */
+@media only screen and (max-width: 1023px) and (min-width: 701px) {
+  .registration-div {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "main sidebar";
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .registration-div {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "main"
+      "sidebar";
+  }
+}
+
+input[type="text"],
+input[type="email"] {
+  font-size: 120%;
+  color: #5a5854;
+  background-color: #f2f2f2;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 5px 5px 5px 30px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="email"] {
+  background-image: url("/src/assets/images/email.png");
+}
+
+input:focus,
+input:hover {
+  background-color: #ffffff;
+  border: 1px solid #b1e1e4;
+}
+
+fieldset {
+  margin: auto;
+  width: 95%;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+}
+
+/* Button states */
+.btn-enabled {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.btn-disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.event-card-container {
+  columns: 1;
+  column-gap: 15px;
+  margin-top: 20px;
+  /*  gap: 20px;*/ /* put a gap between cards */
+}
+
+.criteria {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* media queries for volunteer event card page */
+/* 700-1023 */
+@media screen and (min-width: 700px) {
+  .event-card-container {
+    columns: 2;
+  }
+}
+
+/* 1024-1365 */
+@media screen and (min-width: 1024px) {
+  .event-card-container {
+    columns: 3;
+  }
+}
+
+/* 1366+ */
+@media screen and (min-width: 1366px) {
+  .event-card-container {
+    columns: 4;
+  }
+}
